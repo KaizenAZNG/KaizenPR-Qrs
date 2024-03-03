@@ -61,7 +61,7 @@
       const AS_URL_BASE = "https://script.google.com/macros/s/AKfycbzZUQ2m_iIZ0KhR2fBDJK9ExBBcW2bBPpY0nMtmhFOYEa7FR4f0grQwZLVfpc-lq4wJ5A/exec";
 
       var url = document.location.href;
-      var k = url.substr(url.lastIndexOf("k=")+2);
+      var k = url.substr(url.lastIndexOf("k=") + 2);
 
       if (k) {
         fetch(AS_URL_BASE + '?K=' + k)
@@ -72,10 +72,11 @@
               document.location.replace(r);
             }
           })
-          .catch(err => console.log(err))
+          .catch(err => console.log(err));
       }
     </script>
 
     <div class="lds-ripple"><div></div><div></div></div>
   </body>
 </html>
+
